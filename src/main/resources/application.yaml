@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ssm-demo-app
+  cloud:
+    aws:
+      ssm:
+        provider-type: profile
+        profile: <write_your_aws_profile>
+

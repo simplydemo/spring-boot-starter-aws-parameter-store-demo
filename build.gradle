@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.2'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'io.github.simplyexample.demo'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'io.github.simplyexample.spring.aws:spring-boot-starter-aws-parameter-store:1.0.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+//	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+	testLogging {
+		events "passed"
+	}
+}
